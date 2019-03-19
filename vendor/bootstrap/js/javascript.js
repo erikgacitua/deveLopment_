@@ -5,6 +5,7 @@ $(document).ready(function () {
 	var dataTableSchool = $.post("bff.php", {accion: "tableSchool"},function(data, status){
 		if (status == "success") {
 			$("#table-School").append(data);
+			$('#table-School').DataTable();
 		}else{
 			console.log(data);
 			console.log("Error interno o de conexión: acción: "+acción);
