@@ -11,7 +11,22 @@ $accion = $_POST['accion'];
 if ($accion == "tableSchool") {
 	
 	$arrayData[] = getDataTableSchool($conexion);
-	$table = "<tbody>";	
+	$table = "<table class='table-school table-sm table-hover table-responsive' id='table-School'>
+                <thead>
+                    <tr>
+                      <th scope='col'>#</th>
+                      <th scope='col'>Nombre</th>
+                      <th scope='col'>Comuna</th>
+                      <th scope='col'>Dirección</th>
+                      <th scope='col'>Telefono</th>
+                      <th scope='col'>Director</th>
+                      <th scope='col'>E-mail</th>
+                      <th scope='col'>Contacto</th>
+                      <th scope='col'>E-mail Cont.</th>
+                      <th scope='col'>Telefono Cont.</th>
+                    </tr>
+                </thead>
+                <tbody>";	
 	for ($i=0; $i < count($arrayData[0]); $i++) { 
 	 	$table .= "<tr>
 	 				  <td>".$arrayData[0][$i]["id_school"]."</td>
@@ -26,7 +41,7 @@ if ($accion == "tableSchool") {
 	 				   <td>".$arrayData[0][$i]["telephoneContac"]."</td>
 	 			  </tr>";
 	 }
-	 $table .= "</tbody>";
+	 $table .= "</tbody></table>";
 	 echo $table; 
 }
 
