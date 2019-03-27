@@ -199,7 +199,6 @@ function editDataSchool(val){
 			var emailContac_ = $(this).find("td").eq(8).html();
 			var telePhoneContact_ = $(this).find("td").eq(9).html();
 
-			console.log(commune_);
 			$("#edit_nameInstitution").val(name_);
 			$("#edit_commune").val(commune_);
 			$("#edit_address").val(direccion_);
@@ -214,4 +213,23 @@ function editDataSchool(val){
 			$("#btnDeleteRow").attr("onclick","deleteRow("+val+")")
 		}
 	});
+}
+
+function saveDataEdit(val){
+	console.log(val);
+
+	var saveName = $("#edit_nameInstitution").val();
+	var saveCommune = $("#edit_commune").val();
+	var saveDireccion = $("#edit_address").val();
+	var saveTelephone = $("#edit_telePhone").val();
+	var saveDirector = $("#edit_director").val();
+	var saveEmailDir = $("#edit_emailDirector").val();
+	var saveContac = $("#edit_contact").val();
+	var saveEmailContac = $("#edit_emailContac").val();
+	var saveTelephoneContac = $("#edit_telePhoneContact").val();
+	var accion = "saveEditSchool";
+
+	var data = $.post("bff.php",{
+									accion: accion,
+									save_name: saveName});
 }
