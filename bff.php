@@ -11,7 +11,7 @@ $accion = $_POST['accion'];
 if ($accion == "tableSchool") {
 	
 	$arrayData[] = getDataTableSchool($conexion);
-	$table = "<table class='table-school table-sm table-hover table-responsive' id='table-School'>
+	$table = "<table class='table-school table-sm table-striped table-responsive' id='table-School'>
                 <thead>
                     <tr>
                       <th scope='col'>#</th>
@@ -22,8 +22,9 @@ if ($accion == "tableSchool") {
                       <th scope='col'>Director</th>
                       <th scope='col'>E-mail</th>
                       <th scope='col'>Contacto</th>
-                      <th scope='col'>E-mail Cont.</th>
-                      <th scope='col'>Telefono Cont.</th>
+                      <th scope='col'>E-mail Contacto</th>
+                      <th scope='col'>Telefono Contacto</th>
+                      <th scope='col'>Editar</th>
                     </tr>
                 </thead>
                 <tbody>";	
@@ -39,6 +40,7 @@ if ($accion == "tableSchool") {
 	 				   <td>".$arrayData[0][$i]["contact"]."</td>
 	 				   <td>".$arrayData[0][$i]["emailContac"]."</td>
 	 				   <td>".$arrayData[0][$i]["telephoneContac"]."</td>
+	 				   <td><button id='editData' onClick='editDataSchool(".$arrayData[0][$i]["id_school"].")'><img src='./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-edit.svg' style='width:16px;height:16px;'/></button></td>
 	 			  </tr>";
 	 }
 	 $table .= "</tbody></table>";

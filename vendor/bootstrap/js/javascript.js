@@ -182,3 +182,36 @@ function createSchool(){
 		});
 	}
 }
+
+function editDataSchool(val){
+	
+	$("#table-School tr").each(function(){
+		var idTable = $(this).find("td").eq(0).html();
+		if (idTable == val) {
+
+			var name_ = $(this).find("td").eq(1).html();
+			var commune_ = $(this).find("td").eq(2).html();
+			var direccion_ = $(this).find("td").eq(3).html();
+			var telePhone_ = $(this).find("td").eq(4).html();
+			var director_ = $(this).find("td").eq(5).html();
+			var email_ = $(this).find("td").eq(6).html();
+			var contact_ = $(this).find("td").eq(7).html();
+			var emailContac_ = $(this).find("td").eq(8).html();
+			var telePhoneContact_ = $(this).find("td").eq(9).html();
+
+			console.log(commune_);
+			$("#edit_nameInstitution").val(name_);
+			$("#edit_commune").val(commune_);
+			$("#edit_address").val(direccion_);
+			$("#edit_telePhone").val(telePhone_);
+			$("#edit_director").val(director_);
+			$("#edit_emailDirector").val(email_);
+			$("#edit_contact").val(contact_);
+			$("#edit_emailContac").val(emailContac_);
+			$("#edit_telePhoneContact").val(telePhoneContact_);
+			$(".modal").modal();
+			$("#btnSaveEdit").attr("onclick","saveDataEdit("+val+")");
+			$("#btnDeleteRow").attr("onclick","deleteRow("+val+")")
+		}
+	});
+}
