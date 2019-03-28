@@ -22,7 +22,6 @@
 <body>
 
   <div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Start Bootstrap </div>
@@ -156,6 +155,10 @@
                               <label for="inputZip">Telefono Contacto 1</label>
                               <input type="text" class="form-control" id="telePhoneContact" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
                             </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlFile1">Subir logo del colegio</label>
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
                           </div>
                         </form>
                         <button class="btn btn-primary" onClick="createSchool()">Crear Colegio</button>
@@ -232,7 +235,7 @@
                         </div>
                         <div class="modal-footer">
                             <button id="btnSaveEdit" type="button" class="btn btn-primary">Guardar Cambios</button>
-                            <button id="btnDeleteRow" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                         </div>
                       </div>
                     </div>

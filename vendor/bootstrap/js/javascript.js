@@ -182,7 +182,7 @@ function createSchool(){
 		});
 	}
 }
-
+//Funcion para recorrer la tabla de creación de colegios y cargarlas en el modal de edición
 function editDataSchool(val){
 	
 	$("#table-School tr").each(function(){
@@ -210,14 +210,13 @@ function editDataSchool(val){
 			$("#edit_telePhoneContact").val(telePhoneContact_);
 			$(".modal").modal();
 			$("#btnSaveEdit").attr("onclick","saveDataEdit("+val+")");
-			$("#btnDeleteRow").attr("onclick","deleteRow("+val+")")
+			
 		}
 	});
 }
 
 function saveDataEdit(val){
 	console.log(val);
-
 	var saveName = $("#edit_nameInstitution").val();
 	var saveCommune = $("#edit_commune").val();
 	var saveDireccion = $("#edit_address").val();
@@ -231,5 +230,58 @@ function saveDataEdit(val){
 
 	var data = $.post("bff.php",{
 									accion: accion,
-									save_name: saveName});
+									save_id: val,
+									save_name: saveName,
+									save_commune: saveCommune,
+									save_direccion: saveDireccion,
+									save_telephone: saveTelephone,
+									save_director: saveDirector,
+									save_emailDir: saveEmailDir,
+									save_contac: saveContac,
+									save_emailContac: saveEmailContac,
+									save_telephoneContac: saveTelephoneContac}, 
+		function(data, status){
+			if (data == "true") {
+				alert("Los datos (Colegio '"+saveName+"'') han sido modificados exitosamente!");
+				$(".modal").modal("hide");
+
+				var dataTableSchool = $.post("bff.php", {accion: "tableSchool"},function(data, status){
+						if (status == "success") {
+							$("#tableRegisterSchool").empty();
+							$("#tableRegisterSchool").append(data);
+							$('#table-School').DataTable({
+							      "language": {
+							        "decimal":        ".",
+							        "emptyTable":     "No hay datos para mostrar",
+							        "info":           "del _START_ al _END_ (_TOTAL_ total)",
+							        "infoEmpty":      "del 0 al 0 (0 total)",
+							        "infoFiltered":   "(filtrado de todas las _MAX_ entradas)",
+							        "infoPostFix":    "",
+							        "thousands":      "'",
+							        "lengthMenu":     "Mostrar _MENU_ entradas",
+							        "loadingRecords": "Cargando...",
+							        "processing":     "Procesando...",
+							        "search":         "Buscar:",
+							        "zeroRecords":    "No hay resultados",
+							        "paginate": {
+							          "first":      "Primero",
+							          "last":       "Último",
+							          "next":       "Siguiente",
+							          "previous":   "Anterior"
+							        },
+							        "aria": {
+							          "sortAscending":  ": ordenar de manera Ascendente",
+							          "sortDescending": ": ordenar de manera Descendente ",
+							        }
+							      }
+
+							    });
+						}else{
+							console.log(data);
+							console.log("Error interno o de conexión: acción: "+acción);
+							alert("Se ha producido un problema inesperado, favor intentelo mas tarde.");
+						}
+					});
+			}
+		});
 }

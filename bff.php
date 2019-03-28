@@ -25,6 +25,7 @@ if ($accion == "tableSchool") {
                       <th scope='col'>E-mail Contacto</th>
                       <th scope='col'>Telefono Contacto</th>
                       <th scope='col'>Editar</th>
+                      <th scope='col'>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>";	
@@ -41,6 +42,7 @@ if ($accion == "tableSchool") {
 	 				   <td>".$arrayData[0][$i]["emailContac"]."</td>
 	 				   <td>".$arrayData[0][$i]["telephoneContac"]."</td>
 	 				   <td><button id='editData' onClick='editDataSchool(".$arrayData[0][$i]["id_school"].")'><img src='./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-edit.svg' style='width:16px;height:16px;'/></button></td>
+	 				   <td><button id='eliminaData' onClick='eliminaDataSchool(".$arrayData[0][$i]["id_school"].")'><img src='./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-delete.svg' style='width:16px;height:16px;'/></button></td>
 	 			  </tr>";
 	 }
 	 $table .= "</tbody></table>";
@@ -62,4 +64,19 @@ if ($accion == "createSchool") {
 	echo createSchool($nameInstitution,$commune,$address,$telefono,$director,$emailDirector,$contac,$emailContac,$telePhoneContact,$conexion);
 }
 
+if ($accion == "saveEditSchool") {
+	
+	$IdSchool = $_POST['save_id'];
+	$NameSchool = $_POST['save_name'];
+	$CommuneSchool = $_POST['save_commune'];
+	$DireccionSchool = $_POST['save_direccion'];
+	$TelefonoSchool = $_POST['save_telephone'];
+	$DirectorScholl = $_POST['save_director'];
+	$EmailDirSchool = $_POST['save_emailDir'];
+	$ContactSchool = $_POST['save_contac'];
+	$EmailContactSchool = $_POST['save_emailContac'];
+	$TelefonoConSchool = $_POST['save_telephoneContac'];
+
+	echo updateDataSchool($IdSchool, $NameSchool, $CommuneSchool, $DireccionSchool, $TelefonoSchool, $DirectorScholl, $EmailDirSchool, $ContactSchool, $EmailContactSchool, $TelefonoConSchool, $conexion);
+}
 ?>

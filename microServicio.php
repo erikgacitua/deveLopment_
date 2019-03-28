@@ -34,4 +34,15 @@ function createSchool($nameInstitution,$commune,$address,$telefono,$director,$em
 		}
 }
 
+function updateDataSchool($IdSchool, $NameSchool, $CommuneSchool, $DireccionSchool, $TelefonoSchool, $DirectorScholl, $EmailDirSchool, $ContactSchool, $EmailContactSchool, $TelefonoConSchool, $conexion){
+
+	try{
+		mysql_query("CALL sp_updateSDatachool($IdSchool, '$NameSchool', '$CommuneSchool', '$DireccionSchool', $TelefonoSchool, '$DirectorScholl', '$EmailDirSchool', '$ContactSchool', '$EmailContactSchool', $TelefonoConSchool)",$conexion)or die(mysql_error());
+
+		return "true";
+
+	} catch (Exception $e){
+		return "false";
+	}
+}
 ?>
