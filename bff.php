@@ -79,4 +79,9 @@ if ($accion == "saveEditSchool") {
 
 	echo updateDataSchool($IdSchool, $NameSchool, $CommuneSchool, $DireccionSchool, $TelefonoSchool, $DirectorScholl, $EmailDirSchool, $ContactSchool, $EmailContactSchool, $TelefonoConSchool, $conexion);
 }
+
+if ($accion == "deleteDataTableSchool") {
+	$IdSchool = $_POST['idSchool'];
+	echo deleteSchool($IdSchool,$conexion);
+}
 ?>

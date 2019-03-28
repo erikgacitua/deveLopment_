@@ -45,4 +45,14 @@ function updateDataSchool($IdSchool, $NameSchool, $CommuneSchool, $DireccionScho
 		return "false";
 	}
 }
+
+function deleteSchool($IdSchool,$conexion){
+
+	try{
+		mysql_query("CALL sp_deleteSchool($IdSchool)",$conexion)or die(mysql_error());
+		return "true";
+	} catch (Exception $e){
+		return "false";
+	}
+}
 ?>

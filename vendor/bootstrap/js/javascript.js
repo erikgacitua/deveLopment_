@@ -244,7 +244,6 @@ function saveDataEdit(val){
 			if (data == "true") {
 				alert("Los datos (Colegio '"+saveName+"'') han sido modificados exitosamente!");
 				$(".modal").modal("hide");
-
 				var dataTableSchool = $.post("bff.php", {accion: "tableSchool"},function(data, status){
 						if (status == "success") {
 							$("#tableRegisterSchool").empty();
@@ -284,4 +283,23 @@ function saveDataEdit(val){
 					});
 			}
 		});
+}
+
+function eliminaDataSchool(val){
+	
+	var accion = "deleteDataTableSchool";
+	var data = $.post("bff.php",{accion: accion, idSchool: val},
+
+	function(data, status){
+		console.log(data);
+		console.log(status);
+		if (data == "true") {
+			$("#table-School tr").each(function(){
+				var idTable = $(this).find("td").eq(0).html();
+				if (idTable == val) {
+					alert("Colegio '"+$(this).find("td").eq(1).html()+"' ha sido eliminado correctamente!");
+				}		
+			});
+		}
+	});
 }
