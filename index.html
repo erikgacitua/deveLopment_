@@ -50,18 +50,28 @@
                   </a>
                 </div>
             </div>
-          </div>
-          <div class="nav flex-column nav-pills" id="v-pills-tab_1" role="tablist" aria-orientation="vertical">
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-light list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="menu-collapsed"> 
-                      <b>Profesor</b> <img src="./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-arrow-down.svg" style="width:16px;height:16px;"/>
+                      <b>Profesores</b> <img src="./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-arrow-down.svg" style="width:16px;height:16px;"/>
                     </span>
                     <span class="submenu-icon ml-auto"></span>
                 </div>
             </a>
-            <!-- Comienza submenú-->
-           
+            <div id='submenu2' class="collapse sidebar-submenu">
+                <div class="nav flex-column nav-pills" id="v-pills-tab_1" role="tablist" aria-orientation="vertical">
+                  <a class="nav-link bg-light" id="v-pills-home-tab_1" data-toggle="pill" href="#v-pills-form-ticher" role="tab" aria-controls="v-pills-form-ticher" aria-selected="true"><img src="./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-square-plus.svg" style="width:16px;height:16px;" /><span class="menu-collapsed"> 
+                    Creación de profesores
+                  </span>
+                  </a>
+
+                  <a class="nav-link bg-light" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-table-ticher" role="tab" aria-controls="v-pills-profile" aria-selected="false"><img src="./vendor/bootstrap/glyph-iconset-master/svg/si-glyph-view.svg" style="width:16px;height:16px;" /> 
+                    <span class="menu-collapsed"> 
+                      Registrados
+                    </span>
+                  </a>
+                </div>
+            </div>
           </div>
       </div>
     </div>
@@ -101,6 +111,7 @@
       </nav>
 
       <div class="container-fluid">
+        
         <div class="tab-content" id="v-pills-tabContent">
           
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -240,9 +251,15 @@
                       </div>
                     </div>
                   </div>  
-          </div>
-          <!-- End Table Colegio-->
+          </div><!-- End Table Colegio-->
+          <div class="tab-pane fade" id="v-pills-form-ticher" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <div class="col-md-12">
+              <h3>Ingreso Profesores</h3>
+            </div>
+          </div>    
         </div>
+
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->

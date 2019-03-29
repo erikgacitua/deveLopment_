@@ -298,6 +298,44 @@ function eliminaDataSchool(val){
 				var idTable = $(this).find("td").eq(0).html();
 				if (idTable == val) {
 					alert("Colegio '"+$(this).find("td").eq(1).html()+"' ha sido eliminado correctamente!");
+
+					var dataTableSchool = $.post("bff.php", {accion: "tableSchool"},function(data, status){
+						if (status == "success") {
+							$("#tableRegisterSchool").empty();
+							$("#tableRegisterSchool").append(data);
+							$('#table-School').DataTable({
+							      "language": {
+							        "decimal":        ".",
+							        "emptyTable":     "No hay datos para mostrar",
+							        "info":           "del _START_ al _END_ (_TOTAL_ total)",
+							        "infoEmpty":      "del 0 al 0 (0 total)",
+							        "infoFiltered":   "(filtrado de todas las _MAX_ entradas)",
+							        "infoPostFix":    "",
+							        "thousands":      "'",
+							        "lengthMenu":     "Mostrar _MENU_ entradas",
+							        "loadingRecords": "Cargando...",
+							        "processing":     "Procesando...",
+							        "search":         "Buscar:",
+							        "zeroRecords":    "No hay resultados",
+							        "paginate": {
+							          "first":      "Primero",
+							          "last":       "Último",
+							          "next":       "Siguiente",
+							          "previous":   "Anterior"
+							        },
+							        "aria": {
+							          "sortAscending":  ": ordenar de manera Ascendente",
+							          "sortDescending": ": ordenar de manera Descendente ",
+							        }
+							      }
+
+							    });
+						}else{
+							console.log(data);
+							console.log("Error interno o de conexión: acción: "+acción);
+							alert("Se ha producido un problema inesperado, favor intentelo mas tarde.");
+						}
+					});
 				}		
 			});
 		}

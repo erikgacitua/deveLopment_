@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Simple Sidebar - Start Bootstrap Template</title>
+
+          <!-- Bootstrap core CSS -->
+          <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+          <link href="vendor/bootstrap/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+          <link href="vendor/bootstrap/css/responsive.bootstrap4.min.css" rel="stylesheet">
+          <!-- Custom styles for this template -->
+          <link href="css/simple-sidebar.css" rel="stylesheet">
+
+          <style type="text/css">
+                        /* CSS used here will be applied after bootstrap.css */
+            .menu-ico-collapse {
+                margin-left: 4px;
+            }
+
+            .list-group-submenu .list-group-item:first-child {
+                 border-top-right-radius: 0;
+                 border-top-left-radius: 0;
+            }
+
+            .list-group-submenu .list-group-item:last-child {
+                 margin-bottom: -1px;
+                 border-bottom-right-radius: 0;
+                 border-bottom-left-radius: 0;
+            }
+          </style>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Start Bootstrap </div>
+          <div class="row">
+            <div class="col-4">
+              
+                    <div class="list-group">
+                        
+
+                        <a class="list-group-item" data-remote="true" href="#sub_categoria_4" id="categoria_4" data-toggle="collapse" data-parent="#sub_categoria_4" style="padding-left: 25px;">
+                          <span class="fa fa-shopping-cart fa-lg fa-fw"></span>
+                          <span style="margin-left: 25px;">Compras</span>
+                          <span class="menu-ico-collapse"><i class="fa fa-chevron-down"></i></span>
+                        </a>
+
+                        <div class="collapse list-group-submenu" id="sub_categoria_4">
+                          <a href="#" class="list-group-item sub-item" data-parent="#sub_categoria_4" style="padding-left: 78px;">SubSubPos1</a>
+                          <a href="#" class="list-group-item sub-item" data-parent="#sub_categoria_4" style="padding-left: 78px;">SubSubPos2</a>
+                          <a href="#" class="list-group-item sub-item" data-parent="#sub_categoria_4" style="padding-left: 78px;">SubSubPos3</a>
+                          <a href="#" class="list-group-item sub-item" data-parent="#sub_categoria_4" style="padding-left: 78px;">SubSubPos4</a>
+                        </div>
+
+                        <a class="list-group-item" data-remote="true" href="#" id="categoria_6" style="padding-left: 25px;">
+                          <span class="fa fa-graduation-cap fa-lg fa-fw"></span>
+                          <span style="margin-left: 25px;">Educação</span>
+                        </a>
+                    </div>
+            </div>  
+           
+            </div>
+      </div>  
+
+      <div id="page-content-wrapper">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </div>  
+
+
+  
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="vendor/bootstrap/js/dataTables.min.js"></script>
+      <script src="vendor/bootstrap/js/dataTables.bootstrap4.min.js"></script>
+      <script src="vendor/bootstrap/js/javascript.js"></script>
+
+       <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
