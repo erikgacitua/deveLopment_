@@ -39,7 +39,7 @@
 <body>
     <div class="d-flex" id="wrapper">
       <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Start Bootstrap </div>
+        <div class="sidebar-heading">Klificame </div>
           <div class="row">
             <div class="col-4">
               
@@ -101,8 +101,141 @@
           </nav>
 
                    <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-form-school" role="tabpanel" aria-labelledby="v-pills-form-tab">1</div>
-                    <div class="tab-pane fade" id="v-pills-table-school" role="tabpanel" aria-labelledby="v-pills-table-tab">2</div>
+                    <div class="tab-pane fade show active" id="v-pills-form-school" role="tabpanel" aria-labelledby="v-pills-form-tab">
+                      <div class="form-group col-md-12">
+                        <h3>Ingreso de Colegios</h3>
+                        <form autocomplete="off">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Nombre Institución</label>
+                              <input type="text" class="form-control" id="nameInstitution"  data-toggle="tooltip" title="Ingresar Colegio o Institución">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputPassword4">Comuna</label>
+                              <select id="commune" class="form-control">
+                                <option value="0" selected>Seleccionar...</option>
+                                <option value="1">Santiago</option>
+                                <option value="2">La Florida</option>
+                                <option value="3">Maipu</option>
+                                <option value="4">Puente Alto</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputAddress">Dirección</label>
+                            <input type="text" class="form-control" id="address" data-toggle="tooltip" title="Calle o pasaje + numero #xxxx">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label for="inputCity">Telefono</label>
+                              <input type="text" class="form-control" id="telePhone" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputState">Director</label>
+                              <input type="text" class="form-control" id="director" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputZip">Correo Director</label>
+                              <input type="text" class="form-control" id="emailDirector" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label for="inputCity">Contacto 1</label>
+                              <input type="text" class="form-control" id="contact" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputState">Correo Contacto 1</label>
+                              <input type="text" class="form-control" id="emailContac" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputZip">Telefono Contacto 1</label>
+                              <input type="text" class="form-control" id="telePhoneContact" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlFile1">Subir logo del colegio</label>
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                          </div>
+                        </form>
+                        <button class="btn btn-primary" onClick="createSchool()">Crear Colegio</button>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-table-school" role="tabpanel" aria-labelledby="v-pills-table-tab">
+                          <div class="col-md-12">
+                            <h3>Colegios Registrados</h3>
+                            <div id="tableRegisterSchool"></div>
+                          </div>
+                          <!-- Modal editDataTableCreateSchool -->
+                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Editar Datos</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <form autocomplete="off">
+                                        <div class="form-row">
+                                          <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nombre Institución </label>
+                                            <input type="text" class="form-control" id="edit_nameInstitution"  data-toggle="tooltip" title="Ingresar Colegio o Institución">
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Comuna</label>
+                                            <select id="edit_commune" class="form-control">
+                                              <option value="0" selected>Seleccionar...</option>
+                                              <option value="1">Santiago</option>
+                                              <option value="2">La Florida</option>
+                                              <option value="3">Maipu</option>
+                                              <option value="4">Puente Alto</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="inputAddress">Dirección</label>
+                                          <input type="text" class="form-control" id="edit_address" data-toggle="tooltip" title="Calle o pasaje + numero #xxxx">
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="form-group col-md-4">
+                                            <label for="inputCity">Telefono</label>
+                                            <input type="text" class="form-control" id="edit_telePhone" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="inputState">Director</label>
+                                            <input type="text" class="form-control" id="edit_director" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="inputZip">Correo Director</label>
+                                            <input type="text" class="form-control" id="edit_emailDirector" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                                          </div>
+                                        </div>
+                                        <div class="form-row">
+                                          <div class="form-group col-md-4">
+                                            <label for="inputCity">Contacto 1</label>
+                                            <input type="text" class="form-control" id="edit_contact" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="inputState">Correo Contacto 1</label>
+                                            <input type="text" class="form-control" id="edit_emailContac" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="inputZip">Telefono Contacto 1</label>
+                                            <input type="text" class="form-control" id="edit_telePhoneContact" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                                          </div>
+                                        </div>
+                                      </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button id="btnSaveEdit" type="button" class="btn btn-primary">Guardar Cambios</button>
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>  
+                    </div>
                     <div class="tab-pane fade" id="v-pills-form-ticher" role="tabpanel" aria-labelledby="v-pills-messages-tab">3</div>
                     <div class="tab-pane fade" id="v-pills-table-ticher" role="tabpanel" aria-labelledby="v-pills-settings-tab">4</div>
                   </div>
