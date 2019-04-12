@@ -42,11 +42,39 @@
         <div class="sidebar-heading">Klificame </div>
           <div class="row">
             <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+
+                 <a class="list-group-item list-group-item-action active" id="list-home-list_home" data-toggle="pill" href="#list-home" role="button" aria-expanded="false" aria-controls="collapseExample">
+                 Home</a>
+
+                 <a class="list-group-item list-group-item-action" id="list-home-list_" data-toggle="collapse" href="#list-home-list" role="button" aria-expanded="false" aria-controls="collapseExample">
+                 Colegios</a>
+
+                <a class="list-group-item list-group-item-action collapse" id="list-home-list" data-toggle="list" href="#v-pills-form-school" role="tab" aria-controls="home"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-house.svg" style="width:16px;margin-top: -7px;margin-left: 20px;margin-right: 20px"> Creación
+                </a>
+
+                <a class="list-group-item list-group-item-action collapse" id="list-home-list" data-toggle="list" href="#v-pills-table-school" role="tab" aria-controls="profile"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-view.svg" style="width:16px;margin-top: -3px;margin-left: 20px;margin-right: 20px"> Colegios
+                </a>
+                
+
+
+                <a class="list-group-item list-group-item-action" id="list-messages-list_ticher" data-toggle="collapse" href="#v-pills-form-ticher_" role="tab" aria-controls="messages">Profesores</a>
+
+                <a class="list-group-item list-group-item-action collapse" id="v-pills-form-ticher_" data-toggle="list" href="#v-pills-form-ticher" role="tab" aria-controls="settings"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-person-man.svg" style="width:16px;margin-top: -7px;margin-left: 20px;margin-right: 20px"> Creación
+                </a>
+
+                 <a class="list-group-item list-group-item-action collapse" id="v-pills-form-ticher_" data-toggle="list" href="#v-pills-table-ticher" role="tab" aria-controls="v-pills-table-ticher" aria-selected="false"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-view.svg" style="width:16px;margin-top: -3px;margin-left: 20px;margin-right: 20px">  Creados</a>
+              </div>
+            </div>
+            <!--<div class="col-12">
               
                     <div class="list-group">
                         
                      
                        <div class="nav flex-column nav-pills" id="v-pills-tab_1" role="tablist" aria-orientation="vertical">
+                       
+
+
                        <h6>Colegios</h6>
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-form-school" role="tab" aria-controls="v-pills-form-school" aria-selected="true"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-house.svg" style="width:16px;margin-top: -7px;fill:white;">  Creación Colegio</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-table-school" role="tab" aria-controls="v-pills-table-school" aria-selected="false"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-view.svg" style="width:16px;margin-top: -3px;fill:white;"> Colegios Creados</a>
@@ -59,21 +87,22 @@
                         <h6>Alumnos</h6>
                          <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-form-ticher" role="tab" aria-controls="v-pills-form-ticher" aria-selected="true"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-person-public.svg" style="width:16px;margin-top: -7px;fill:white;">  Creación Alumnos</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-table-ticher" role="tab" aria-controls="v-pills-table-ticher" aria-selected="false"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-view.svg" style="width:16px;margin-top: -3px;fill:white;"> Alumnos Creados</a>
-                      </div>
+                        
+                    </div>
                       
                         <div class="nav flex-column nav-pills" id="v-pills-tab_2" role="tablist" aria-orientation="vertical">
                        
                       </div>
                       
                     </div>
-            </div>  
+            </div>-->  
            
             </div>
       </div>  
 
       <div id="page-content-wrapper">
           <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <button class="btn btn-light" id="menu-toggle"><img src="vendor//bootstrap/glyph-iconset-master/svg/si-glyph-align-center.svg" style="width:16px"></button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -100,8 +129,11 @@
             </div>
           </nav>
 
-                   <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-form-school" role="tabpanel" aria-labelledby="v-pills-form-tab">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="v-pills-messages-tab">home</div>
+
+                    <div class="tab-pane fade" id="v-pills-form-school" role="tabpanel" aria-labelledby="v-pills-form-tab">
                       <div class="form-group col-md-12">
                         <h3>Ingreso de Colegios</h3>
                         <form autocomplete="off">
@@ -236,7 +268,61 @@
                               </div>
                             </div>  
                     </div>
-                    <div class="tab-pane fade" id="v-pills-form-ticher" role="tabpanel" aria-labelledby="v-pills-messages-tab">3</div>
+                    <div class="tab-pane fade" id="v-pills-form-ticher" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <div class="form-group col-md-12">
+                              <h3>Ingreso de Profesores</h3>
+                              <form autocomplete="off">
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Nombres</label>
+                                    <input type="text" class="form-control" id="nameTicher"  data-toggle="tooltip" title="Ingresar nombres">
+                                  </div>
+                                   <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Apellidos</label>
+                                    <input type="text" class="form-control" id="surnamesTicher"  data-toggle="tooltip" title="Ingresar Apellidos">
+                                  </div>   
+                                </div>
+                                 
+                                <div class="form-group">
+                                  <label for="inputAddress">Dirección</label>
+                                  <input type="text" class="form-control" id="address" data-toggle="tooltip" title="Calle o pasaje + numero #xxxx">
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputCity">Telefono</label>
+                                    <input type="text" class="form-control" id="telePhone" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputState">Director</label>
+                                    <input type="text" class="form-control" id="director" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputZip">Correo Director</label>
+                                    <input type="text" class="form-control" id="emailDirector" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-4">
+                                    <label for="inputCity">Contacto 1</label>
+                                    <input type="text" class="form-control" id="contact" data-toggle="tooltip" title="Nombre + 2 Apellidos">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputState">Correo Contacto 1</label>
+                                    <input type="text" class="form-control" id="emailContac" data-toggle="tooltip" title="Ej: prueba@gmail.com">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputZip">Telefono Contacto 1</label>
+                                    <input type="text" class="form-control" id="telePhoneContact" data-toggle="tooltip" title="Ingresa telefono fijo o móvil" maxlength="9">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleFormControlFile1">Subir logo del colegio</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                  </div>
+                                </div>
+                              </form>
+                              <button class="btn btn-primary" onClick="createSchool()">Crear Colegio</button>
+                          </div>
+                    </div>
                     <div class="tab-pane fade" id="v-pills-table-ticher" role="tabpanel" aria-labelledby="v-pills-settings-tab">4</div>
                   </div>
       </div>
